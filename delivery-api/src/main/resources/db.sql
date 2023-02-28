@@ -21,6 +21,7 @@ CREATE TABLE menu_date(
  CONSTRAINT fk_menu_date FOREIGN KEY(menu_id) REFERENCES menu(menu_id)
 );
 
+
 CREATE TABLE users_menu(
 	menu_date_id int,
 	user_id int,
