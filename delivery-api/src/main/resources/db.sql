@@ -47,3 +47,5 @@ CREATE SEQUENCE IF NOT EXISTS menu_date_id_seq;
 ALTER TABLE menu_date ALTER COLUMN menu_date_id  SET DEFAULT nextval('menu_date_id_seq');
 ALTER SEQUENCE menu_date_id_seq owned by menu_date.menu_date_id;
 
+ALTER TABLE users
+ADD COLUMN active BOOLEAN;
