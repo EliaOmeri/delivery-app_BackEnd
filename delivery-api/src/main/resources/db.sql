@@ -32,3 +32,6 @@ CREATE TABLE users_menu(
 	FOREIGN KEY (user_id) REFERENCES users (user_id)
 );
 
+ALTER TABLE menu
+ADD COLUMN active BOOLEAN;
+
