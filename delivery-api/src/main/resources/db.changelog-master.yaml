@@ -1,0 +1,12 @@
+
+databaseChangeLog:
+  - include:
+      file: scripts/1_database_init.sql
+  - include:
+      file: scripts/2_alter_table_menu.sql
+  - include:
+      file: scripts/3_sequences_users_menu_menu_date.sql
+  - include:
+       file: scripts/4_alter_table_users.sql
+
+
