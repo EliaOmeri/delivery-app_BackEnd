@@ -1,2 +1,4 @@
-package al.crystal.deliveryapi.dto;public class UserDTO {
+package al.crystal.deliveryapi.dto;
+
+public class UserDTO {
 }
