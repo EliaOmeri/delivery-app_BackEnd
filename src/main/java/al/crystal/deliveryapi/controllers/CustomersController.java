@@ -1,29 +1,26 @@
 package al.crystal.deliveryapi.controllers;
 
+import al.crystal.deliveryapi.model.User;
+import al.crystal.deliveryapi.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@CrossOrigin(origins = "*")
+import java.util.List;
+
 @RestController
 @RequestMapping("/api")
-public class TestController {
-    @GetMapping("/all")
-    public String allAccess() {
-        return "Public Content.";
-    }
-
-//    @GetMapping("/user")
+@CrossOrigin(origins = "http://localhost:4200")
+public class CustomersController {
+    @Autowired
+    private UserService service;
+    @GetMapping("/customers")
 //    @PreAuthorize("hasAnyAuthority(false) or hasAnyAuthority(true)")
-//    public String userAccess() {
-//        return "User Content.";
-//    }
-
-    @GetMapping("/admin")
-    @PreAuthorize("hasAnyAuthority(true)")
-    public String adminAccess() {
-        return "Admin Content.";
+    public List<User> getAllCustomers(){
+        return service.getCustomers();
     }
+
 }
